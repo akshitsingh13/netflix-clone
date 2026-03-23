@@ -41,9 +41,9 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    height: 40px;
+    height: 50px;
     border-radius: 50%;
-    border-top: 5px solid rgba(255, 80, 100, 0.7);
+    border-top: 5px solid rgba(255, 13, 41, 0.7);
 
     /* Only glow upward, not downward */
     box-shadow: 0 -10px 20px 6px rgba(220, 20, 60, 0.171),
@@ -208,10 +208,171 @@ body {
 }
 
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .trending-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     background-color: #000;
-    /* add this */
     padding: 40px 144px;
     color: white;
-    /* add this */
+}
+
+.trending-section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+/* ── Scrollable row ── */
+.trending-shows {
+    display: flex;
+    align-items: flex-end;
+    /* numbers + cards share the same baseline */
+    gap: 0;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: #e60914 #1a1a1a;
+    margin-top: 20px;
+    padding-bottom: 12px;
+}
+
+.trending-shows::-webkit-scrollbar {
+    height: 4px;
+}
+
+.trending-shows::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+.trending-shows::-webkit-scrollbar-thumb {
+    background: #e60914;
+    border-radius: 10px;
+}
+
+/* ── Card wrapper (replaces bare <img>) ── */
+.card-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    /* right padding creates visual gap between cards
+       without breaking the overlapping number layout */
+    padding-right: 16px;
+}
+
+/* ── Big rank number ── */
+.card-wrapper .rank {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 130px;
+    line-height: 1;
+    color: #000;
+    /* fills with background → invisible */
+    -webkit-text-stroke: 3px #3a3a3a;
+    /* visible outline only */
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    margin-right: -22px;
+    /* overlap onto the card */
+    padding-bottom: 6px;
+    user-select: none;
+    transition: color 0.3s ease, -webkit-text-stroke-color 0.3s ease;
+}
+
+.card-wrapper:hover .rank {
+    color: transparent;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ── Thumbnail container ── */
+.card-wrapper .card-img {
+    position: relative;
+    z-index: 3;
+    width: 160px;
+    height: 240px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.35s ease;
+}
+
+.card-wrapper:hover .card-img {
+    transform: scale(1.08);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.85);
+}
+
+/* ── Thumbnail image ── */
+.card-wrapper .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* no transition needed — parent handles it */
+}
+
+/* ── Hover overlay ── */
+.card-wrapper .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.1) 55%,
+            transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px 10px;
+    gap: 8px;
+}
+
+.card-wrapper:hover .card-overlay {
+    opacity: 1;
+}
+
+/* ── Play button inside overlay ── */
+.card-overlay .play-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.card-overlay .play-btn:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+.card-overlay .play-btn svg {
+    width: 13px;
+    height: 13px;
+    fill: #000;
+    margin-left: 2px;
+    /* optical centering for the triangle */
+}
+
+/* ── Optional title shown on hover ── */
+.card-overlay .card-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
