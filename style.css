@@ -230,6 +230,7 @@ body {
     display: flex;
     gap: 48px;
     overflow-x: scroll;
+    overflow-y: hidden;
     scroll-snap-type: mandatory;
     -ms-overflow-style: none;
     scrollbar-width: 24px;
@@ -257,9 +258,28 @@ body {
 
 .trending-shows::-webkit-scrollbar-track {
     background: #33333300;
-    /* the background rail */
     border-radius: 10px;
 }
+
+.cards {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.rank {
+    position: absolute;
+    bottom: -10px;
+    left: -30px;
+    font-size: 96px;
+    font-weight: 900;
+    color: black;
+    -webkit-text-stroke: 4px white;
+    line-height: 1;
+    z-index: 2;
+    font-family: 'Martel Sans', Arial, sans-serif;
+    user-select: none;
+}
+
 
 .mrtj {
     display: flex;
@@ -312,3 +332,4 @@ body {
     height: 104px;
     width: 104px;
 }
+
