@@ -222,7 +222,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 16px;
-    padding-left: 24px  ;
+    padding-left: 24px;
 }
 
 .trending-button button {
@@ -267,11 +267,13 @@ body {
     padding: 24px 24px 24px 24px;
 }
 
-.trending-shows img,.rank {
+.trending-shows img,
+.rank {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.trending-shows img:hover,.rank:hover {
+.trending-shows img:hover,
+.rank:hover {
     transform: scale(1.06);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
 }
@@ -359,4 +361,30 @@ body {
 .mrtj-cards .mrtj-cards-logo img {
     height: 104px;
     width: 104px;
+}
+
+.FAQs {
+    display: flex;
+    gap: 12px;
+    background-color: #000;
+    padding: 40px 144px;
+    color: white;
+    overflow-x: auto;
+    flex-direction: column;
+}
+
+.FAQs-cards details {
+    padding: 16px;
+    border-radius: 8px;
+    background: rgb(75, 75, 75);
+}
+
+
+.FAQs-cards summary {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.FAQs-cards p {
+    font-size: 24px;
 }
