@@ -372,11 +372,18 @@ body {
     overflow-x: auto;
     flex-direction: column;
 }
-
+.FAQs-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 .FAQs-cards details {
+    display: flex;
+    flex-direction: column;
     padding: 16px;
     border-radius: 8px;
     background: rgb(75, 75, 75);
+
 }
 
 
