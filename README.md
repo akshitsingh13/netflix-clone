@@ -7,10 +7,15 @@ The website is static with micro interactions featuring smooth transitions betwe
 This project is a part of my learning to becoming a full stack developer.
 
 🛠️**Tech Stack**
+
 HTML
+
 CSS
+
 JS
+
 GitHub
+
 VS Code
 
 🧠 **What I Learned**
