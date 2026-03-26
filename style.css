@@ -100,7 +100,8 @@ body {
     background-color: #C11119;
 }
 
-.hero-nav-bar-right select {
+.hero-nav-bar-right select,
+.bottom-lang select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -122,18 +123,21 @@ body {
     background-position: right 12px center;
 }
 
-.hero-nav-bar-right select:hover {
+.hero-nav-bar-right select:hover,
+.bottom-lang select:hover {
     background-color: rgba(50, 50, 50, 0.8);
 }
 
-.hero-nav-bar-right select option {
+.hero-nav-bar-right select option,
+.bottom-lang select option {
     background-color: white;
     color: black;
     font-size: 15px;
     padding: 10px;
 }
 
-.hero-nav-bar-right select option:checked {
+.hero-nav-bar-right select option:checked,
+.bottom-lang select option:checked {
     background-color: #0066cc;
     color: white;
 }
@@ -427,3 +431,51 @@ body {
     align-items: center;
 }
 
+.footer {
+    display: flex;
+    gap: 48px;
+    background-color: #000;
+    padding: 40px 144px;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left
+}
+
+.questions,
+.questions a {
+    color: rgb(174, 173, 173);
+}
+
+.explore {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px 0;
+}
+
+.explore a {
+    color: rgb(174, 173, 173);
+}
+
+.bottom-lang select {
+    color: rgb(174, 173, 173);
+}
+
+.Title {
+    color: rgb(174, 173, 173);
+}
+
+.captcha-info{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.captcha-info-text {
+    color: rgb(174, 173, 173);
+}
+
+.captcha-info a{
+    color: rgb(77, 77, 245);
+}
