@@ -415,3 +415,14 @@ body {
     font-size: 24px;
     padding: 24px 0px 24px 0px;
 }
+
+.sign-up-second {
+    display: flex;
+    gap: 12px;
+    background-color: #000;
+    padding: 40px 144px;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
