@@ -22,6 +22,7 @@ VS Code
 With this project I learned how websites divide their website into different sections which futher sub divide, which actually
 makes it easier to work on small elements which than all come together and become one good website. Micro interactions and making
 the buttons functioning in the trending section allowed me to step into JavaScript officially.
+Also used AI to learn what @media in CSS is and used the values given by it and fized resizing issues in smaller screens.
 
 📸 **Demo**
 
