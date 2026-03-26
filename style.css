@@ -576,6 +576,7 @@ body {
     .footer {
         padding: 32px 20px;
     }
+
     .trending-shows img {
         width: 120px;
         height: 180px;
@@ -654,7 +655,7 @@ body {
     }
 
     .hero-nav-bar {
-        padding: 20`px 32px;
+        padding: 20px 32px;
     }
 
     .hero-nav-bar img {
