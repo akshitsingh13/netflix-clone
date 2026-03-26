@@ -265,10 +265,10 @@ body {
     overflow-y: hidden;
     scroll-snap-type: mandatory;
     -ms-overflow-style: none;
-    scrollbar-width: 24px;
-    scrollbar-color: #e60914 #33333300;
+    /* scrollbar-width: 24px;
+    scrollbar-color: #e60914 #33333300; */
     margin-top: 20px;
-    padding: 24px 24px 24px 24px;
+    padding: 16px 24px 24px 24px;
 }
 
 .trending-shows img,
