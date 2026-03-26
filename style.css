@@ -256,7 +256,7 @@ body {
 
 .trending-shows {
     display: flex;
-    gap: 48px;
+    gap: 72px;
     overflow-x: scroll;
     overflow-y: hidden;
     scroll-snap-type: mandatory;
@@ -372,26 +372,46 @@ body {
     overflow-x: auto;
     flex-direction: column;
 }
+
 .FAQs-cards {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
+
 .FAQs-cards details {
     display: flex;
     flex-direction: column;
     padding: 16px;
     border-radius: 8px;
-    background: rgb(75, 75, 75);
+    background: #3a3a3a;
 
 }
-
 
 .FAQs-cards summary {
     font-size: 24px;
     cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FAQs-cards summary::-webkit-details-marker {
+    display: none;
+}
+
+.FAQs-cards summary::after {
+    content: '+';
+    font-size: 40px;
+    transition: transform .25s ease;
+}
+
+.FAQs-cards details[open]>summary::after {
+    transform: rotate(45deg);
 }
 
 .FAQs-cards p {
     font-size: 24px;
+    padding: 24px 0px 24px 0px;
 }
